@@ -19,7 +19,7 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             echo "Deploying code on Excloud server..."
-            cd /home/ubuntu/hello-world
+            cd /home/ubuntu/dev-ops  
             git pull
             npm install
             pm2 restart 0
