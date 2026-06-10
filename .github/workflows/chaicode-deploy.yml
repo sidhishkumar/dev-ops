@@ -33,10 +33,10 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             # kill existing container
-            docker ps -q --filter "name=chaicode" | xargs -r docker
+            sudo docker ps -q --filter "name=chaicode" | xargs -r docker
             # pull latest image
-            docker pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
+            sudo docker pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
             # run new container
-            docker run -d --name chaicode -p 8000:8000 ${{ vars.DOCKER_USERNAME }}/chaicode:latest  
+            sudo docker run -d --name chaicode -p 8000:8000 ${{ vars.DOCKER_USERNAME }}/chaicode:latest  
             # clean up old images
-            docker image prune -f 
+            sudo docker image prune -f 
