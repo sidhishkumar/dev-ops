@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  return res.json({'message': 'Hello World!-- V2-- github actions--'} );
+  return res.json({'message': 'Hello World!-- V2-- github actions corrected--'} );
 });
 
 app.listen(8000, () => {
