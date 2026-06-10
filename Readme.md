@@ -1,3 +1,6 @@
+
+Below code yml code is used to deploy the code on server using github action
+*****************************************************************************
 name: Deploy Nodejs code on Excloud
 on:
   push: 
@@ -10,20 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v4
-        with:
-          username: ${{ vars.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_TOKEN }}
-
-
-      - name: set up Docker Buildx
-        uses: docker/build-push-action@v4
-
-      - name: Build and push Docker image
-        run: |
-          docker build -t ${{ vars.DOCKER_USERNAME }}/chaicode:latest .
-          docker push ${{ vars.DOCKER_USERNAME }}/chaicode:latest
      
       - name: Deploy to Excloud
         uses: appleboy/ssh-action@v1.0.3
@@ -39,3 +28,5 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             npm install
             pm2 restart 0
+
+************************************************************************************
