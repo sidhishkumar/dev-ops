@@ -18,6 +18,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
+            echo "Deploying code on Excloud server..."
             cd /home/ubuntu/hello-world
             git pull
             npm install
