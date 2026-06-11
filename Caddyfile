@@ -1,6 +1,4 @@
-sidhish.com {
-    tls sidhish@sidhish.com
-    
+:80 {
     handle {
         reverse_proxy nodejs-server:8000{
             header_up Host { host }
