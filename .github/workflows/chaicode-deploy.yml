@@ -33,14 +33,14 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
             # CD /home/ubuntu/dev-ops
-            cd /home/ubuntu/dev-ops
+            cd /home/ubuntu 
 
             # git pull
             git pull origin main
 
             # make sure pull the fresh copy of image chaicode:latest
-            sudo docker compose pull 
-
+            sudo docker compose pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
+            
             # docker compose up -d
             sudo docker compose up -d
             sudo docker image prone -f
