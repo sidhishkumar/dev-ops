@@ -34,9 +34,10 @@ jobs:
           script: |
             # kill existing container
             sudo docker ps -q --filter "name=chaicode" | xargs -r docker
+            sudo docker rm -f chaicode || true
             # pull latest image
             sudo docker pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
             # run new container
-            sudo docker run -d --name chaicode -p 8000:8000 ${{ vars.DOCKER_USERNAME }}/chaicode:latest  
+            sudo docker run -d --name chaicode -p 80:8000 ${{ vars.DOCKER_USERNAME }}/chaicode:latest  
             # clean up old images
             sudo docker image prune -f 
