@@ -2,6 +2,7 @@ services:
 
   nodejs-server:
     image : sidhishkumar/chaicode:latest
+    container_name: chaicode
     deploy:
       replicas: 2
     networks: 
@@ -13,7 +14,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile
     networks:
       - chaicode-internal
 
