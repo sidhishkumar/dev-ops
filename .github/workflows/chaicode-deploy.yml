@@ -32,12 +32,15 @@ jobs:
           username: ubuntu
           key: ${{ secrets.PRIVATE_KEY }}
           script: |
-            # kill existing container
-            sudo docker ps -q --filter "name=chaicode" | xargs -r docker
-            sudo docker rm -f chaicode || true
-            # pull latest image
-            sudo docker pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
-            # run new container
-            sudo docker run -d --name chaicode -p 80:8000 ${{ vars.DOCKER_USERNAME }}/chaicode:latest  
-            # clean up old images
-            sudo docker image prune -f 
+            # CD /home/ubuntu/dev-ops
+            cd /home/ubuntu/dev-ops
+
+            # git pull
+            git pull origin main
+
+            # make sure pull the fresh copy of image chaicode:latest
+            sudo docker compose pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
+            
+            # docker compose up -d
+            sudo docker compose up -d
+            sudo docker image prone -f
