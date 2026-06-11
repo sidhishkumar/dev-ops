@@ -39,8 +39,8 @@ jobs:
             git pull origin main
 
             # make sure pull the fresh copy of image chaicode:latest
-            sudo docker compose pull ${{ vars.DOCKER_USERNAME }}/chaicode:latest
-            
+            sudo docker compose pull 
+
             # docker compose up -d
             sudo docker compose up -d
             sudo docker image prone -f
