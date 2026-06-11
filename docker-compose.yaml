@@ -3,7 +3,7 @@ services:
   nodejs-server:
     image : sidhishkumar/chaicode:latest
     deploy:
-      replicas: 5
+      replicas: 10
     networks: 
       - chaicode-internal
 
