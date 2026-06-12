@@ -4,14 +4,14 @@
 
         reverse_proxy nodejs-server:8000 {
 
-            header_up Host { host }
+            // header_up Host { host }
 
-            header_up X-Real-IP { remote }
+            // header_up X-Real-IP { remote }
 
-            header_up X-Forward-For { remote }
+            // header_up X-Forward-For { remote }
 
-            header_up X-Forward-Proto { scheme }
-            
+            // header_up X-Forward-Proto { scheme }
+
         }
     }
 }
