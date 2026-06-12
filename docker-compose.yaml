@@ -2,7 +2,6 @@ services:
 
   nodejs-server:
     image : sidhishkumar/chaicode:latest
-    container_name: chaicode
     deploy:
       replicas: 2
     networks: 
