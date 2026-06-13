@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  return res.json({'message': 'Everthing is working fine', status : 200 } );
+  return res.json({'message': 'Everthing is working fine', status : 200 , flag : true} );
 });
 
 app.listen(8000, () => {
