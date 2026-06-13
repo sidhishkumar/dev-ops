@@ -9,6 +9,6 @@
     }
 }
 
-# This Caddyfile configures a reverse proxy to the Node.js server running in the Docker container.
+# This Caddyfile configures a reverse proxy to the Node.js server running in the Docker container...
 
 
