@@ -1,4 +1,4 @@
-:80 {
+sidhishkumae.com {
     handle {
         reverse_proxy nodejs-server:8000 {
             header_up Host {host}
@@ -9,6 +9,6 @@
     }
 }
 
-# This Caddyfile configures a reverse proxy to the Node.js server running in the Docker container...
+
 
 
